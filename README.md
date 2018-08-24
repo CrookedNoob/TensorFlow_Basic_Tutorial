@@ -5,10 +5,10 @@
 Visit the offical [Tensorflow](https://www.tensorflow.org/install/) webpage for installation guide <br /><br />
 _Simple installation step is: <br />_
 - Go to Command Prompt <br />
-- Execute the the command: ```pip3 install --upgrade tensorflow``` <br /><br />
+- Execute the the command: ```pip3 install --upgrade tensorflow``` <br />
+(Right now we are not going into the complexity of installing Tersorflow with ***GPU Support***. We will be using Tensorflow with CPU)<br/><br/>
 
-I am assuming that you have installed _Jupyter Notebook_ already. Once Tensorflow is installed on your system with the related dependencies, we will move to the next steps. <br /><br />
-
+I am assuming that you have installed _Jupyter Notebook_ already. Once Tensorflow is installed on your system with the related dependencies, we will move to the next steps. <br />
  - Open Jupyter Notebook
  - Import _Tensorflow_ by executing 
  ```python
@@ -59,4 +59,4 @@ sess = tf.Session()
 print(sess.run(d, feed_dict={a: 3.5, b: 2.5})
 ```
 
-***I will keep on adding new codes and explanations***   
+***This repository will be updated with new codes and tutorials***   
