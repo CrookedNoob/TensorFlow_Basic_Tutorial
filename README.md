@@ -1,4 +1,4 @@
-# Tensorflow_Basics
+# Tensorflow Basic Tutorial
 ###### This Repository will take you through the basics of Tensorlow
 
 **Installing Tensorflow** <br />
