@@ -3,7 +3,7 @@
 
 **Installing Tensorflow** <br />
 Visit the offical [Tensorflow](https://www.tensorflow.org/install/) webpage for installation guide <br /><br />
-_Simple installation step is: <br />_
+_Simple installation steps are: <br />_
 - Go to Command Prompt <br />
 - Execute the the command: ```pip3 install --upgrade tensorflow``` <br />
 (Right now we are not going into the complexity of installing Tersorflow with ***GPU Support***. We will be using Tensorflow with CPU)<br/><br/>
