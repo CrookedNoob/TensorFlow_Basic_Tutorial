@@ -94,9 +94,11 @@ c = tf.add(a, b, name="sum")
 ```
 <br/>Now, this is how it looks like:<br/>
 ![graph4](https://user-images.githubusercontent.com/13174586/44650239-ada9a480-aa03-11e8-8565-d94c437594aa.JPG)
-<br/><br/><br/>
+<br/><br/>
+ We will learn more about TensorBorad later<br/><br/><br/>
 
-***Constant Operations:*** <br/>
+
+***Constant Operations*** *([Refer this file](https://github.com/crookednoob/Tensorflow_Basics/blob/master/Tensorflow_n_Tensorboard_Basic_Constant_Creation.ipynb))* ***:*** <br/>
 - Create constant:<br/>
 <code class="highlighter-rouge">tf.constant(value, dtype=None, shape=None, name="constant", verify_shape=False)</code>
 
@@ -183,5 +185,5 @@ m=tf.truncated_normal([3,4], mean=1.5, stddev=1.2, dtype=tf.float32, seed=123, n
 ```python
 n= tf.random_uniform([5,5], minval=10, maxval=100, dtype=tf.float32, seed=123, name="rand_uni")
 ```
-<br/>
-***This repository will be updated with new codes and tutorials***   
+
+<br/><br/><br/><br/><br/><br/>***This repository will be updated with new codes and tutorials***   
