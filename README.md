@@ -85,5 +85,12 @@ Once executed, we will get a line like this  *http://DIN19001082:6006*. On openi
 ![graph2](https://user-images.githubusercontent.com/13174586/44649453-86ea6e80-aa01-11e8-85ca-ff56be8a8a8e.JPG)
 ![graph3](https://user-images.githubusercontent.com/13174586/44649448-8651d800-aa01-11e8-8a1d-7a56f9cc1bc7.JPG)
 
+We can notice that thought we have assigned constants to *a* and *b* in the code, the TensorBoard shows them as *Const* and *Const_1*
+In order to change them on the TensorBoard, we need to edit our code a bit while assigning the constants by:
+```python
+a = tf.constant(2, name="a")
+b = tf.constant(3, name="b")
+c = tf.add(a, b, name="sum")
+```
 
 ***This repository will be updated with new codes and tutorials***   
