@@ -59,4 +59,26 @@ sess = tf.Session()
 print(sess.run(d, feed_dict={a: 3.5, b: 2.5})
 ```
 
+**Using TensorBoard with TensorFlow**<br/>
+TensorBoard is a graph visualisation software which is included by default while installing TensorFlow.
+For this part we will use *Tensorflow_n_Tensorboard_Basic.py* where we are creating two constants *a* and *b* and assigining them value of *10* and *30* respectively. <br/>
+We are performing a quick addition as we did in the first code. <br/>
+Now we want to visualize it using TensorBroad. If we want to visualize using TensorBoard for a code with TensorFlow running in backend, we have to create log file where we export the operations. TensorBoard creates visualizations of the graph that we created and also shares certain runtime details of the same. <br/>
+Uisng TensorBoard while working on Machine Learning or Deep Learning problems is immensey helpful as it makes it easier to understand.<br/>  
+In order to visualize the addition on TensorBoard, we have to add the below line to the code
+```python
+writer = tf.summary.FileWriter([logdir], [graph])
+```
+<br/>*logdir* is the path where the log files for the event will be created and the *graph* is the one taht we are using for our code. The *graph* can be either user defined or created by default. Inour case it is the default one. For the default graph, we will use,<br/> 
+>tf.get_default_graph() 
+<br/>
+
+Now we have to open **Terminal** and go the foleder path and execute the below code:<br/>
+<code class="highlighter-rouge">python Tensorflow_n_Tensorboard_Basic.py</code> 
+<br/>Now to visualize using TensorBoard, we have to execute the below code from the same terminal:<br/>
+<code class="highlighter-rouge">tensorboard --logdir="./graphs" --port 6006</code> 
+<br/>
+Once executed, we will get a line like this  *http://DIN19001082:6006*. One opening the link, we will get to see the graphs as below:
+![Alt text](C:\Users\soumyama\Pictures\Tutorial\graph.jpg)
+
 ***This repository will be updated with new codes and tutorials***   
