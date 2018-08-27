@@ -77,7 +77,7 @@ Now we have to open **Terminal** and go the foleder path and execute the below c
 <code class="highlighter-rouge">python Tensorflow_n_Tensorboard_Basic.py</code> 
 <br/>Now to visualize using TensorBoard, we have to execute the below code from the same terminal:<br/>
 <code class="highlighter-rouge">tensorboard --logdir="./graphs" --port 6006</code> 
-<br/>
+<br/><br/>
 Once executed, we will get a line like this  *http://DIN19001082:6006*. On opening the link, we will get to see the graphs as below:<br/>
 ![graph](https://user-images.githubusercontent.com/13174586/44649449-8651d800-aa01-11e8-8c63-3d4cf3896566.JPG)
 <br/>This is how the graph looks. Now if we hover over the graphs and click on the elements of it we will get the details as below:<br/>
@@ -85,12 +85,13 @@ Once executed, we will get a line like this  *http://DIN19001082:6006*. On openi
 ![graph2](https://user-images.githubusercontent.com/13174586/44649453-86ea6e80-aa01-11e8-85ca-ff56be8a8a8e.JPG)
 ![graph3](https://user-images.githubusercontent.com/13174586/44649448-8651d800-aa01-11e8-8a1d-7a56f9cc1bc7.JPG)
 
-We can notice that thought we have assigned constants to *a* and *b* in the code, the TensorBoard shows them as *Const* and *Const_1*
+<br/>We can notice that thought we have assigned constants to *a* and *b* in the code, the TensorBoard shows them as *Const* and *Const_1*
 In order to change them on the TensorBoard, we need to edit our code a bit while assigning the constants by:
 ```python
 a = tf.constant(2, name="a")
 b = tf.constant(3, name="b")
 c = tf.add(a, b, name="sum")
 ```
-
-***This repository will be updated with new codes and tutorials***   
+<br/>Now, this is how it looks like:<br/>
+![graph4](https://user-images.githubusercontent.com/13174586/44650239-ada9a480-aa03-11e8-8565-d94c437594aa.JPG)
+<br/><br/><br/>***This repository will be updated with new codes and tutorials***   
