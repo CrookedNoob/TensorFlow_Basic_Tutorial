@@ -61,7 +61,7 @@ print(sess.run(d, feed_dict={a: 3.5, b: 2.5})
 
 **Using TensorBoard with TensorFlow**<br/>
 TensorBoard is a graph visualisation software which is included by default while installing TensorFlow.
-For this part we will use *Tensorflow_n_Tensorboard_Basic.py* where we are creating two constants *a* and *b* and assigining them value of *10* and *30* respectively. <br/>
+For this part we will use [Tensorflow_n_Tensorboard_Basic.py](https://github.com/crookednoob/Tensorflow_Basics/blob/master/Tensorflow_n_Tensorboard_Basic.py) where we are creating two constants *a* and *b* and assigining them value of *10* and *30* respectively. <br/>
 We are performing a quick addition as we did in the first code. <br/>
 Now we want to visualize it using TensorBroad. If we want to visualize using TensorBoard for a code with TensorFlow running in backend, we have to create log file where we export the operations. TensorBoard creates visualizations of the graph that we created and also shares certain runtime details of the same. <br/>
 Uisng TensorBoard while working on Machine Learning or Deep Learning problems is immensey helpful as it makes it easier to understand.<br/>  
