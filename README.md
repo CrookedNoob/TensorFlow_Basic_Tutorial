@@ -100,14 +100,84 @@ c = tf.add(a, b, name="sum")
 - Create constant:<br/>
 <code class="highlighter-rouge">tf.constant(value, dtype=None, shape=None, name="constant", verify_shape=False)</code>
 <br/>
-- Constant of 1D Tensor i.e. Vector:<br/>
+
+- Constant of 1D Tensor i.e. Vector<br/>
 ```python
 a= tf.constant([10,20], name='Vector')
 ```
 <br/>
-- Constant of 2X2 tensor i.e. Matrix:<br/>
+- Constant of 2X2 tensor i.e. Matrix<br/>
 ```python
 b= tf.constant([[10,20],[30,40]], name='Matrix')
 ```
-
+<br/>
+- Create Tensor with specific dimension and specific values:<br/>
+<code class="highlighter-rouge">tf.zeros([2,3], dtype=tf.int32, name=None)</code>
+<br/>
+- Create a Tensor 2x3 i.e. Matrix with zero as all elements<br/>
+```python
+c= tf.zeros([2,3], dtype=tf.float32, name="Zero")
+```
+<br/>
+- Create a tensor of shape and type (unless specified) as tensor_shape but all the elements are zeros<br/>
+```python
+tensor_shape= [[0,1],[2,3],[3,4],[4,5]]
+d=tf.zeros_like(tensor_shape)
+```
+<br/>
+- Create a tensor of any shape and all the elements are 1s:<br/>
+<code class="highlighter-rouge">tf.ones(shape, dtype=tf.float32, name=None)</code>
+<br/>
+```python
+e= tf.ones([3,5], dtype=tf.int32, name='Ones')
+```
+<br/>
+- Create a tensor of shape and type (unless specified) as tensor_shape but all the elements are 1s:<br/>
+<code class="highlighter-rouge">tf.ones_like(shape, name=None)</code>
+<br/>
+```python
+tensor_shape= [[0,1],[2,3],[3,4],[4,5]]
+f=tf.ones_like(tensor_shape)
+```
+<br/>
+- Create a Tensor and fill it with any scalar value:<br/>
+<code class="highlighter-rouge">tf.fill(dims, value, name=None)</code>
+<br/>
+```python
+g= tf.fill([5,4], 999)
+```
+<br/>
+- Create Tensor with sequence of constants:<br/>
+<code class="highlighter-rouge">tf.lin_space(start, stop, num, name=None)</code>
+<br/>
+```python
+h= tf.lin_space(100.0, 200.0, 10, name="sequence")
+```
+<br/>
+- Create a Tensor sequence that increments by delta but does not include the limits:<br/>
+<code class="highlighter-rouge">tf.range([start], limit=None, delta=delta, dtype=None, name=None)</code>
+<br/>
+```python
+i= tf.range(10, limit=20, delta=1, dtype=tf.float32, name="seq1")
+j= tf.range(50, limit=10, delta=-10, dtype=tf.float32, name="seq2")
+limit=5
+k= tf.range(limit)
+```
+<br/>
+- Generate Random conmstants from certain distributions:<br/>
+<code class="highlighter-rouge">tf.random_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)</code> - Returns a tensor of the specified shape filled with random normal values <br/>
+```python
+l= tf.random_normal([2,3], mean=0.0, stddev=1.0, dtype=tf.float32, seed=1, name="norm_dist")
+```
+<br/>
+<code class="highlighter-rouge">tf.truncated_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)</code> - Returns A tensor of the specified shape filled with random truncated normal values<br/>
+```python
+m=tf.truncated_normal([3,4], mean=1.5, stddev=1.2, dtype=tf.float32, seed=123, name="trunc_norm")
+```
+<br/>
+<code class="highlighter-rouge">tf.random_uniform(shape, minval=0, maxval=None, dtype=tf.float32, seed=None, name=None)</code> - Returns A tensor of the specified shape filled with random uniform values<br/>
+```python
+n= tf.random_uniform([5,5], minval=10, maxval=100, dtype=tf.float32, seed=123, name="rand_uni")
+```
+<br/>
 ***This repository will be updated with new codes and tutorials***   
