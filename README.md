@@ -94,4 +94,20 @@ c = tf.add(a, b, name="sum")
 ```
 <br/>Now, this is how it looks like:<br/>
 ![graph4](https://user-images.githubusercontent.com/13174586/44650239-ada9a480-aa03-11e8-8565-d94c437594aa.JPG)
-<br/><br/><br/>***This repository will be updated with new codes and tutorials***   
+<br/><br/><br/>
+
+***Constant Operations:*** <br/>
+- Create constant:<br/>
+<code class="highlighter-rouge">tf.constant(value, dtype=None, shape=None, name="constant", verify_shape=False)</code>
+<br/>
+- Constant of 1D Tensor i.e. Vector:<br/>
+```python
+a= tf.constant([10,20], name='Vector')
+```
+<br/>
+- Constant of 2X2 tensor i.e. Matrix:<br/>
+```python
+b= tf.constant([[10,20],[30,40]], name='Matrix')
+```
+
+***This repository will be updated with new codes and tutorials***   
