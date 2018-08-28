@@ -186,4 +186,212 @@ m=tf.truncated_normal([3,4], mean=1.5, stddev=1.2, dtype=tf.float32, seed=123, n
 n= tf.random_uniform([5,5], minval=10, maxval=100, dtype=tf.float32, seed=123, name="rand_uni")
 ```
 
+<br/><br/>***Mathematical Operations*** *([Refer this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Tensorflow_n_Tensorboard_Basic_Math_Dtype_VarType_InteractiveSessn.ipynb)):*
+
+<br/> We have demonstrated few mathematical operations above. Here's few more:
+- Computes Python style division of *a* by *b*<br/>
+```python
+c= tf.divide(a,b)
+```
+- Returns *a / b* returns the quotient of *a* and *b*<br/>
+```python
+d= tf.div(a,b)
+```
+- Returns *a / b* evaluated in floating point. Will return error if both have different data types<br/>
+```python
+e= tf.truediv(a,b)
+```
+- Returns *a / b* rounded down (except possibly towards zero for negative integers). Returns error if inputs are complex<br/>
+```python
+f= tf.floordiv(a,b)
+```
+- Returns a Tensor. Has the same type as *a*<br/>
+```python
+g= tf.truncatediv(a,b)
+```
+- Returns a Tensor. Has the same type as *a*<br/>
+```python
+h= tf.floor_div(a,b) 
+```
+- Add *n* number of tensors mentioned as a list<br/>
+```python
+k= tf.add_n([a,i,j])
+```
+- Dot Product([Refer this site to know about axes selection](https://www.tensorflow.org/api_docs/python/tf/tensordot))<br/>
+```python
+m= tf.tensordot(a,i,1)
+```
+<br/><br/>***Data Types*** *([Refer this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Tensorflow_n_Tensorboard_Basic_Math_Dtype_VarType_InteractiveSessn.ipynb)):*
+<br/>In *TensorFlow* all the data are in the form of **Tensors** with **Rank**. If it is a *scalar* value, it is known as a *Tensor of Rank 0*. If it is a *vector*, in TensorFlow it is called as *Tensor of Rank 1*. In case of a *matrix*, it is known as *Tensor of Rank 2* and so on.<br/>
+```python
+sclr=999 
+zero_0D= tf.zeros_like(sclr)
+one_0D= tf.ones_like(sclr)
+
+with tf.Session() as sess:
+    print(sess.run(zero_0D))
+    print("\n",sess.run(one_0D))
+```
+Output:<br/>
+> 0 <br/>
+> 1 <br>
+- [Various Data Types](https://www.tensorflow.org/api_docs/python/tf/DType) used in tensorFlow:
+- We can use some of the **Numpy** datatypes in *TensorFlow*
+```import numpy as np
+tf.ones([5,10], np.float32)
+
+with tf.Session() as sess:
+    print(sess.run(tf.ones([5,10], np.float32)))
+```
+Output:<br/>
+> [[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]<br/>
+> [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]<br/>
+> [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]<br/>
+> [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]<br/>
+> [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]]<br/>
+
+<br/><br/>***Variables*** *([Refer this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Tensorflow_n_Tensorboard_Basic_Math_Dtype_VarType_InteractiveSessn.ipynb)):*
+- We need variables at certain cases where a constant won't work. For example, while creating models, we we to update the *weights* and *biases* while training the data. It is not possible for a constant to do. Hence, we require a variable. We have to create instance for the class <code class="highlighter-rouge">tf.Variable()</code> 
+```python
+const= tf.constant([2,3], name="constant")
+print(tf.get_default_graph().as_graph_def())
+```
+- Old way to create variables
+```python
+n= tf.Variable(2, name="Scalar")
+o= tf.Variable([[1,2],[3,4]], name="Matrix")
+p= tf.Variable(tf.ones([20,10]))
+```
+- Recommended way to create variables<br/>
+<code class="highlighter-rouge">tf.get_variabels(name, shape=None, dtype=None, initializer=None, regularizer=None, trainable=True, collections=None, chaching_device=None, validate_shape=True, use_resource=None, custom_getter=None, constraint=None)</code>
+<br/>example-<br/>
+```python
+scl1= tf.get_variable("Scalar1", initializer=tf.constant(100))
+matrx1= tf.get_variable("Matrix1", initializer=tf.constant([[1,0],[0,1]]))
+massv_matrx1= tf.get_variable("Massive_matrix1", shape=(1000,50), initializer=tf.ones_initializer())
+```
+***Initialize variables:***
+- We have to initialize variables before initializing them else we will get an error 
+<code class="highlighter-rouge">FailedPreconditionError: Attempting to use uninitialized value</code>
+- To get the list of uninitialized variables we have to execute the below codes
+```python
+with tf.Session() as sess:
+    print(sess.run(tf.report_uninitialized_variables()))
+```
+- To initialize variables we have to write
+```python
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+```
+- To initialize a subset of variables
+```python
+with tf.Session() as sess:
+    sess.run(tf.variables_initializer([scl, matrx1]))
+```
+- To initialize each variables independently
+```python
+with tf.Session() as sess:
+    sess.run(massv_matrx1.initializer)
+```
+***Evaluate values of variables:***
+- To obtain the value of any variable, we have to do it within a Session(just as we do with the Tensors for any rank)
+```python
+massv_matrx2= tf.get_variable("Massive_matrix2", shape=(1000,50), initializer=tf.glorot_normal_initializer())
+
+with tf.Session() as sess:
+    sess.run(massv_matrx2.initializer)
+    print(sess.run(massv_matrx2))
+```
+- We can also fetch variables value using the below code
+```python
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    print(massv_matrx2.eval())
+```
+***Assign values to variables:***
+```python
+q= tf.Variable(20)
+q.assign(200)
+with tf.Session() as sess:
+    sess.run(q.initializer)
+    print(q.eval())
+```
+Output:<br/>
+> 20
+
+<br/>The above code creates assigns value of *20* to *q* instead of 200<br/>
+In order to assign the value of *200*, we have to do it within session<br/>
+```python
+with tf.Session() as sess:
+    sess.run(q.assign(200))
+    print(q.eval())
+```
+Output:<br/>
+> 200 <br/>
+<br/>
+<code class="highlighter-rouge">assign()</code> itself initializes the variable *q* for us. So we do not need to do initialize it
+<br/>
+Create a variable with value 5<br/>
+```python
+five= tf.get_variable("scalar5", initializer=tf.constant(5))
+five_times_five= five.assign(five*5)
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    print(sess.run(five_times_five))
+    print(sess.run(five_times_five))
+    print(sess.run(five_times_five))
+    print(sess.run(five_times_five))
+```
+Output:<br/>
+> 25
+> 125
+> 625
+> 3125
+<br/>
+- Different Sessions in Tensorflow store different values of the variables as defined in the graph
+```python
+u = tf.Variable(10)
+
+with tf.Session() as sess:
+    sess.run(u.initializer)
+    print(sess.run(u.assign_add(10)))
+    print(sess.run(u.assign_sub(2)))
+
+sess1 = tf.Session()
+sess2 = tf.Session()
+sess1.run(u.initializer)
+sess2.run(u.initializer)
+print(sess1.run(u.assign_add(10)))
+print(sess2.run(u.assign_sub(2)))
+print(sess1.run(u.assign_add(100)))
+print(sess2.run(u.assign_sub(50)))
+sess1.close()
+sess2.close()
+```
+Output:<br/>
+> 20
+> 18
+> 20
+> 8
+> 120
+> -42
+
+<br/>
+- Variable dependent on another variable
+```v= tf.Variable(tf.truncated_normal([100,20]))
+w= tf.Variable(v*5)
+
+with tf.Session() as sess:
+    sess.run(w.initializer)
+    print(sess.run(w))
+ ```
+ - We should always use initialized_value() on the independent varaible before it is used to initialize the dependent variable
+ ```python
+ w= tf.Variable(v.initialized_value()*5)
+
+with tf.Session() as sess:
+    sess.run(w.initializer)
+    print(sess.run(w))
+ ```
+ 
 <br/><br/><br/><br/><br/><br/>***This repository will be updated with new codes and tutorials***   
