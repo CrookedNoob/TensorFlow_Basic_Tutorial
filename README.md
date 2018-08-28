@@ -381,6 +381,7 @@ Output:<br/>
 
 <br/>
 - Variable dependent on another variable
+
 ```python
 v= tf.Variable(tf.truncated_normal([100,20]))
 w= tf.Variable(v*5)
@@ -389,7 +390,9 @@ with tf.Session() as sess:
     sess.run(w.initializer)
     print(sess.run(w))
  ```
+ 
  - We should always use initialized_value() on the independent varaible before it is used to initialize the dependent variable
+ 
  ```python
  w= tf.Variable(v.initialized_value()*5)
 
@@ -398,4 +401,35 @@ with tf.Session() as sess:
     print(sess.run(w))
  ```
  
+ <br/><br/>***Interactive Sessions*** *([Refer this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Tensorflow_n_Tensorboard_Basic_Math_Dtype_VarType_InteractiveSessn.ipynb)):*
+ - It is created as a default session where we can call the run() and eval() whithout explicitly calling the session everytime
+ - Though this looks convenient and easey but it creates problem when we have to work on multiple sessions
+ 
+ ```python
+ sess=tf.InteractiveSession()
+a=tf.constant(10)
+b=tf.constant(30)
+c=a*b
+print(c.eval())
+sess.close()
+```
+Output:<br/>
+> 300
+<br/>
+
+<br/><br/>***Importing Data*** *([Refer this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Tensorflow_n_Tensorboard_Basic_Math_Dtype_VarType_InteractiveSessn.ipynb)):*
+<br/>As mentioned earlier a TensorFlow program has two parts:
+- **Step1:** Create a graph
+- **Step2:** Evaluate variables and execute operations using a session 
+
+```
+a= tf.placeholder(tf.float32, shape=[5])
+b=tf.constant([12,13,1,23,5], tf.float32)
+summation= a+b
+with tf.Session() as sess:
+    print(sess.run(summation, {a: [1,2,3,4,5]})) #declare the values of the placeholder
+```
+Output:<br/>
+> [13. 15.  4. 27. 10.]
+
 <br/><br/><br/><br/><br/><br/>***This repository will be updated with new codes and tutorials***   
