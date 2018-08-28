@@ -319,7 +319,7 @@ with tf.Session() as sess:
 Output:<br/>
 > 20
 
-<br/>The above code creates assigns value of *20* to *q* instead of 200<br/>
+<br/>The above code creates assigns value of *20* to *q* instead of *200*<br/>
 In order to assign the value of *200*, we have to do it within session<br/>
 ```python
 with tf.Session() as sess:
@@ -329,9 +329,11 @@ with tf.Session() as sess:
 Output:<br/>
 > 200 <br/>
 <br/>
-<code class="highlighter-rouge">assign()</code> itself initializes the variable *q* for us. So we do not need to do initialize it
+<code class="highlighter-rouge">assign()</code> 
+<br/>itself initializes the variable *q* for us. So we do not need to do initialize it
 <br/>
-Create a variable with value 5<br/>
+- Create a variable with value 5
+
 ```python
 five= tf.get_variable("scalar5", initializer=tf.constant(5))
 five_times_five= five.assign(five*5)
@@ -343,12 +345,13 @@ with tf.Session() as sess:
     print(sess.run(five_times_five))
 ```
 Output:<br/>
-> 25
-> 125
-> 625
-> 3125
+> 25 <br/>
+> 125 <br/>
+> 625 <br/>
+> 3125 
 <br/>
 - Different Sessions in Tensorflow store different values of the variables as defined in the graph
+
 ```python
 u = tf.Variable(10)
 
@@ -369,16 +372,17 @@ sess1.close()
 sess2.close()
 ```
 Output:<br/>
-> 20
-> 18
-> 20
-> 8
-> 120
-> -42
+> 20 <br/>
+> 18 <br/>
+> 20 <br/>
+> 8 <br/>
+> 120 <br/>
+> -42 <br/>
 
 <br/>
 - Variable dependent on another variable
-```v= tf.Variable(tf.truncated_normal([100,20]))
+```python
+v= tf.Variable(tf.truncated_normal([100,20]))
 w= tf.Variable(v*5)
 
 with tf.Session() as sess:
