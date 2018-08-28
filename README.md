@@ -432,4 +432,4 @@ with tf.Session() as sess:
 Output:<br/>
 > [13. 15.  4. 27. 10.]
 
-<br/><br/><br/><br/><br/><br/>***This repository will be updated with new codes and tutorials***   
+<br/><br/><br/><br/><br/><br/>***Please visit the other folders for more***   
