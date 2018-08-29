@@ -332,6 +332,7 @@ Output:<br/>
 <code class="highlighter-rouge">assign()</code> 
 <br/>itself initializes the variable *q* for us. So we do not need to do initialize it
 <br/>
+
 - Create a variable with value 5
 
 ```python
@@ -350,6 +351,7 @@ Output:<br/>
 > 625 <br/>
 > 3125 
 <br/>
+
 - Different Sessions in Tensorflow store different values of the variables as defined in the graph
 
 ```python
@@ -380,6 +382,7 @@ Output:<br/>
 > -42 <br/>
 
 <br/>
+
 - Variable dependent on another variable
 
 ```python
@@ -402,7 +405,9 @@ with tf.Session() as sess:
  ```
  
  <br/><br/>***Interactive Sessions*** *([Refer this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Tensorflow_n_Tensorboard_Basic_Math_Dtype_VarType_InteractiveSessn.ipynb)):*
+ 
  - It is created as a default session where we can call the run() and eval() whithout explicitly calling the session everytime
+ 
  - Though this looks convenient and easey but it creates problem when we have to work on multiple sessions
  
  ```python
@@ -419,7 +424,9 @@ Output:<br/>
 
 <br/><br/>***Importing Data*** *([Refer this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Tensorflow_n_Tensorboard_Basic_Math_Dtype_VarType_InteractiveSessn.ipynb)):*
 <br/>As mentioned earlier a TensorFlow program has two parts:
+
 - **Step1:** Create a graph
+
 - **Step2:** Evaluate variables and execute operations using a session 
 
 ```
