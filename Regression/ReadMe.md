@@ -23,6 +23,14 @@ Find the relationship between Life Expectancy of a child and Birth Rate. For mor
 - Loss to be calculated using ***MSE*** *(Mean Squared Error)*
 - *MSE* will be calculated after each *epoch*
 - Refer [this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Regression/Tensorflow_Simple_Linear_Regression.py) for the complete code
+- With tf.data, we can created a Dataset from tensors with- 
+```python
+tf.data.Dataset.from_tensor_slices((features, labels))
+```
+- **features** and **labels** are supposed to be tensors. Since TensorFlow and Numpy are seamlessly integrated, they can be NumPy arrays. We can initialize our dataset as-
+```python
+dataset = tf.data.Dataset.from_tensor_slices((data[:,0], data[:,1]))
+```
 
 ![simpllinreg](https://user-images.githubusercontent.com/13174586/44777880-4b82a800-ab99-11e8-823b-d1be549d67e8.JPG)
 <br/>The straight line represents the regression model on our data. As we can see that *Life Expectancy* is negatively correlated to *Birth Rate*, we can safely assume that more birth rate causes higher probaliblity for the death of the younger child.<br/>
@@ -32,5 +40,4 @@ Find the relationship between Life Expectancy of a child and Birth Rate. For mor
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 ###### Reference: <br/>
-[chiphuyen Git Repo](https://github.com/chiphuyen) <br/>
 [Tensorflow](https://www.tensorflow.org/)
