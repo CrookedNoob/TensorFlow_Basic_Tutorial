@@ -5,3 +5,21 @@ It is a mathematical equation(generally of a straight line: **y**= *m* **x** + *
 In the case of Machine Learning the obove equation is represented as:<br/>
 ###### **y** *= w* **X** *+ b*<br/>
 where **Y** is the value we want to *predict*, **X** is the *independent variable/predictor* and **w** is the *weight* and **b** is the *bias*<br/>
+
+#### Problem Statement:<br/>
+Find the relationship between Life Expectancy of a child and Birth Rate. For more description, visit the [Link](https://www.google.com/publicdata/explore?ds=d5bncppjof8f9_&ctype=b&strail=false&nselm=s&met_x=sp_dyn_le00_in&scale_x=lin&ind_x=false&met_y=sp_dyn_tfrt_in&scale_y=lin&ind_y=false&met_s=sp_pop_totl&scale_s=lin&ind_s=false&dimp_c=country:region&ifdim=country&iconSize=0.5&uniSize=0.035#!ctype=b&strail=false&bcs=d&nselm=s&met_x=sp_dyn_le00_in&scale_x=lin&ind_x=false&met_y=sp_dyn_tfrt_in&scale_y=lin&ind_y=false&met_s=sp_pop_totl&scale_s=lin&ind_s=false&dimp_c=country:region&ifdim=country&pit=1421395200000&hl=en_US&dl=en_US&ind=false)
+
+| Data Dictionary         | Description     |
+|-------------------------|-----------------|
+| Predictor (X)           | Birth Rate      |
+| Dependent (Y)           | Life Expectancy |
+| Examples (Observations) | 190             |
+| File Name               | birth_rate.txt  |
+
+
+**Assumption:** The relationship between "Birth Rate" and "Life Expectancy" is linear<br/>
+- In this case study, the equation will be ***Y = wX + b***, where **Y**= *Life Expectancy*, **X**= *Birth Rate*, **w**= *Weight(scalar)*, **b**= *Bias(scalar)* <br/>
+- **w**, **b** will be calculated using *One Layer Neural Network with BackPropagation Technique* <br/>
+- Loss to be calculated using ***MSE*** *(Mean Squared Error)*
+- *MSE* will be calculated after each *epoch*
+
