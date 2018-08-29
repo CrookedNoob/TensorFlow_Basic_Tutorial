@@ -29,3 +29,8 @@ Find the relationship between Life Expectancy of a child and Birth Rate. For mor
 
 ![graph_linreg](https://user-images.githubusercontent.com/13174586/44777878-4aea1180-ab99-11e8-8f69-6258317ef322.png)
 <br/>This is how the graph for our simple regression model looks like.
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+###### Reference: <br/>
+[chiphuyen Git Repo](https://github.com/chiphuyen) <br/>
+[Tensorflow](https://www.tensorflow.org/)
