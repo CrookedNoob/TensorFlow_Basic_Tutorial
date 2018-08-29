@@ -27,4 +27,4 @@ Find the relationship between Life Expectancy of a child and Birth Rate. For mor
 <br/>The straight line represents the regression model on our data. As we can see that *Life Expectancy* is negatively correlated to *Birth Rate*, we can safely assume that more birth rate causes higher probaliblity for the death of the younger child.<br/>
 
 ![graph_linreg](https://user-images.githubusercontent.com/13174586/44777878-4aea1180-ab99-11e8-8f69-6258317ef322.png)
-<br/>This is how the groph for our simple regression model looks like.
+<br/>This is how the graph for our simple regression model looks like.
