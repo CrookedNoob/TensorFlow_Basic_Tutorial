@@ -31,12 +31,53 @@ tf.data.Dataset.from_tensor_slices((features, labels))
 ```python
 dataset = tf.data.Dataset.from_tensor_slices((data[:,0], data[:,1]))
 ```
+- Once we have converted data into Dataset object, we can iterate through samples in this Dataset using an iterator. An iterator iterates through the Dataset and returns a new sample or batch each time we call <code class="highlighter-rouge">get_next()</code>
+```python
+iterator = dataset.make_one_shot_iterator()
+X, Y = iterator.get_next()
+```
+- We can compute **Y_predicted** and **loss** from **X** and **Y** without supplementing data through <code class="highlighter-rouge">feed_dict</code>
+```python
+for i in range(100): # train the model 100 epochs
+        total_loss = 0
+        try:
+            while True:
+                sess.run([optimizer]) 
+        except tf.errors.OutOfRangeError:
+            pass
+```
 
 ![simpllinreg](https://user-images.githubusercontent.com/13174586/44777880-4b82a800-ab99-11e8-823b-d1be549d67e8.JPG)
 <br/>The straight line represents the regression model on our data. As we can see that *Life Expectancy* is negatively correlated to *Birth Rate*, we can safely assume that more birth rate causes higher probaliblity for the death of the younger child.<br/>
 
+### Optimizer <br/>
+***Optimizer*** is an op with a task of minimizing loss. <br/>
+To execute this op, we need to pass it into the list of fetches of <code class="highlighter-rouge">tf.Session.run()</code>. When TensorFlow executes ***optimizer***, it will execute the part of the graph that this op depends on. In our case, the optimizer depends on **loss**, and *loss* depends on inputs **X**,  **Y**, as well as two variables **weights** and **bias**.
+
+```python
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01).minimize(loss)
+sess.run([optimizer])
+```
+
 ![graph_linreg](https://user-images.githubusercontent.com/13174586/44777878-4aea1180-ab99-11e8-8f69-6258317ef322.png)
-<br/>This is how the graph for our simple regression model looks like.
+<br/>This is how the graph for our simple regression model looks like.</br/>
+
+From the graph, we can notice that the <code class="highlighter-rouge">GradientDescentOptimizer</code> depends on: **weights**, **bias** and **gradients**. <code class="highlighter-rouge">GradientDescentOptimizer</code> means that our update rule is gradient descent. TensorFlow does auto differentiation for us, then update the values of **w** and **b** to *minimize* the **loss**.<br/><br/>
+
+##### List of Optimizers: <br/>
+<code class="highlighter-rouge">tf.train.Optimizer</code><br/>
+<code class="highlighter-rouge">tf.train.GradientDescentOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.AdadeltaOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.AdagradOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.AdagradDAOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.MomentumOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.AdamOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.FtrlOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.ProximalGradientDescentOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.ProximalAdagradOptimizer</code><br/>
+<code class="highlighter-rouge">tf.train.RMSPropOptimizer</code><br/>
+
+
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 ###### Reference: <br/>
