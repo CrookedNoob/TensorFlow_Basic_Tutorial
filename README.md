@@ -432,4 +432,5 @@ with tf.Session() as sess:
 Output:<br/>
 > [13. 15.  4. 27. 10.]
 
-<br/><br/><br/><br/><br/><br/>***Please visit the other folders for more***   
+<br/><br/><br/><br/><br/><br/>***Please visit the other folders for more***  
+###### Reference: [Tensorflow](https://www.tensorflow.org/api_docs/python/tf)
