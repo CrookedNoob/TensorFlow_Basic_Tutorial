@@ -73,7 +73,7 @@ writer = tf.summary.FileWriter([logdir], [graph])
 >tf.get_default_graph() 
 <br/>
 
-Now we have to open **Terminal** and go the foleder path and execute the below code:<br/>
+Now we have to open **Terminal** and go the folder path and execute the below code:<br/>
 <code class="highlighter-rouge">python Tensorflow_n_Tensorboard_Basic.py</code> 
 <br/>Now to visualize using TensorBoard, we have to execute the below code from the same terminal:<br/>
 <code class="highlighter-rouge">tensorboard --logdir="./graphs" --port 6006</code> 
