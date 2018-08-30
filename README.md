@@ -1,8 +1,8 @@
 # Tensorflow Basic Tutorial
-###### This Repository will take you through the basics of Tensorlow
+###### This Repository will take you through the basics of TensorFlow
 
-**Installing Tensorflow** <br />
-Visit the offical [Tensorflow](https://www.tensorflow.org/install/) webpage for installation guide <br /><br />
+**Installing TensorFlow** <br />
+Visit the offical [TensorFlow](https://www.tensorflow.org/install/) webpage for installation guide <br /><br />
 _Simple installation steps are: <br />_
 - Go to Command Prompt <br />
 - Execute the the command: ```pip3 install --upgrade tensorflow``` <br />
