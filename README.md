@@ -78,7 +78,7 @@ Now we have to open **Terminal** and go the foleder path and execute the below c
 <br/>Now to visualize using TensorBoard, we have to execute the below code from the same terminal:<br/>
 <code class="highlighter-rouge">tensorboard --logdir="./graphs" --port 6006</code> 
 <br/><br/>
-Once executed, we will get a line like this  *http://DIN19001082:6006*. On opening the link, we will get to see the graphs as below:<br/>
+Once executed, we will get a link like this  *http://DIN19001082:6006*. On opening the link, we will get to see the graphs as below:<br/>
 ![graph](https://user-images.githubusercontent.com/13174586/44649449-8651d800-aa01-11e8-8c63-3d4cf3896566.JPG)
 <br/>This is how the graph looks. Now if we hover over the graphs and click on the elements of it we will get the details as below:<br/>
 ![graph1](https://user-images.githubusercontent.com/13174586/44649451-8651d800-aa01-11e8-9e1d-b5c7633d5320.JPG)
