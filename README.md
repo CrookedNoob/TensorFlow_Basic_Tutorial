@@ -168,7 +168,7 @@ limit=5
 k= tf.range(limit)
 ```
 
-- Generate Random conmstants from certain distributions:<br/>
+- Generate Random constants from certain distributions:<br/>
 <code class="highlighter-rouge">tf.random_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)</code> - Returns a tensor of the specified shape filled with random normal values <br/>
 
 ```python
