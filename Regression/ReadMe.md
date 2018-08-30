@@ -78,6 +78,7 @@ From the graph, we can notice that the <code class="highlighter-rouge">GradientD
 <code class="highlighter-rouge">tf.train.RMSPropOptimizer</code><br/>
 
 
+# Logistic Regression with TensorFlow (on MNIST)
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 ###### Reference: <br/>
