@@ -8,7 +8,7 @@ _Simple installation steps are: <br />_
 - Execute the the command: ```pip3 install --upgrade tensorflow``` <br />
 (Right now we are not going into the complexity of installing Tersorflow with ***GPU Support***. We will be using Tensorflow with CPU)<br/><br/>
 
-I am assuming that you have installed _Jupyter Notebook_ already. Once Tensorflow is installed on your system with the related dependencies, we will move to the next steps. <br />
+I am assuming that you have installed _Jupyter Notebook_ already. Once Tensorflow is installed with the related dependencies, we will move to the next steps. <br />
  - Open Jupyter Notebook
  - Import _Tensorflow_ by executing 
  ```python
