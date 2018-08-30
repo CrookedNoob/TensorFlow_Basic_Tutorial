@@ -69,7 +69,7 @@ In order to visualize the addition on TensorBoard, we have to add the below line
 ```python
 writer = tf.summary.FileWriter([logdir], [graph])
 ```
-<br/>*logdir* is the path where the log files for the event will be created and the *graph* is the one taht we are using for our code. The *graph* can be either user defined or created by default. Inour case it is the default one. For the default graph, we will use,<br/> 
+<br/>*logdir* is the path where the log files for the event will be created and the *graph* is the one that we are using for our code. The *graph* can be either user defined or created by default. Inour case it is the default one. For the default graph, we will use,<br/> 
 >tf.get_default_graph() 
 <br/>
 
@@ -95,7 +95,7 @@ c = tf.add(a, b, name="sum")
 <br/>Now, this is how it looks like:<br/>
 ![graph4](https://user-images.githubusercontent.com/13174586/44650239-ada9a480-aa03-11e8-8565-d94c437594aa.JPG)
 <br/><br/>
- We will learn more about TensorBorad later<br/><br/><br/>
+ We will learn more about TensorBoard later<br/><br/><br/>
 
 
 ***Constant Operations*** *([Refer this file](https://github.com/crookednoob/Tensorflow_Basics/blob/master/Tensorflow_n_Tensorboard_Basic_Constant_Creation.ipynb))* ***:*** <br/>
