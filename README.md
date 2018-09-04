@@ -439,5 +439,7 @@ with tf.Session() as sess:
 Output:<br/>
 > [13. 15.  4. 27. 10.]
 
+<br/><br/>***Eager Execution*** *([Refer this file](https://github.com/crookednoob/TensorFlow_Basic_Tutorial/blob/master/Tensorflow_Eager_Execution.ipynb)):*
+
 <br/><br/><br/><br/><br/><br/>***Please visit the other folders for more***  
 ###### Reference: [TensorFlow API Docs](https://www.tensorflow.org/api_docs/python/tf)
